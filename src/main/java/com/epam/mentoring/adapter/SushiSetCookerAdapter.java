@@ -22,8 +22,8 @@ public class SushiSetCookerAdapter implements PizzaCooker {
 	}
 
 	@Override
-	public void bake() {
-		adaptee.cookSushi();
+	public void bake(String sushiName) {
+		adaptee.cookSushi(sushiName);
 		adaptee.rollUpRolls();
 		adaptee.prepareScallop();
 	}

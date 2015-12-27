@@ -2,7 +2,7 @@ package com.epam.mentoring.adapter;
 
 public interface Conveyor {
 	
-	void bakePizza();
+	void bakePizza(String pizzaName);
 	
 	void slicePizza();
 	 

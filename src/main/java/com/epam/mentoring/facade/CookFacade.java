@@ -36,19 +36,18 @@ public class CookFacade {
         this.sushiSetCooker = sushiSetCooker;
     }
 
-    public void cookPizza() {
-        pizzaCooker.bake();
+    public void cookAndBoxPizza(String...pizzaNames) {
+        for (String pizzaName : pizzaNames) {
+            pizzaCooker.bake(pizzaName);
+            pizzaCooker.box();
+        }
     }
 
-    public void cookSushi() {
-        sushiSetCooker.cookSushi();
+    public void cookAndBoxSushi(String...sushiNames) {
+        for (String sushiName : sushiNames) {
+            sushiSetCooker.cookSushi(sushiName);
+            sushiSetCooker.pack();
+        }
     }
 
-    public void boxPizza() {
-        pizzaCooker.box();
-    }
-
-    public void boxSushi() {
-        sushiSetCooker.pack();
-    }
 }

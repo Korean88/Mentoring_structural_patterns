@@ -1,8 +1,9 @@
 package com.epam.mentoring.facade;
 
 import com.epam.mentoring.adapter.PizzaCooker;
+import com.epam.mentoring.adapter.PizzaCookerImpl;
 import com.epam.mentoring.adapter.SushiSetCooker;
-import com.epam.mentoring.infrastructure.BeanInitializer;
+import com.epam.mentoring.adapter.SushiSetCookerImpl;
 
 /**
  * Created by Andrey Yun on 22.12.15.
@@ -10,20 +11,22 @@ import com.epam.mentoring.infrastructure.BeanInitializer;
 public class FacadeRunner {
 
     public static void main(String[] args) {
-        PizzaCooker pizzaCooker = BeanInitializer.initBean(PizzaCooker.PIZZA_COOKER_BEAN);
-        SushiSetCooker sushiSetCooker = BeanInitializer.initBean(SushiSetCooker.SUSHI_COOKER_BEAN);
+        PizzaCooker pizzaCooker = new PizzaCookerImpl();
+        SushiSetCooker sushiSetCooker = new SushiSetCookerImpl();
 
-        /* //without facade
-        pizzaCooker.bake();
+         //without facade
+        /*pizzaCooker.bake("Margherita");
         pizzaCooker.box();
-        sushiSetCooker.cookSushi();
+        pizzaCooker.bake("Bolognese");
+        pizzaCooker.box();
+        sushiSetCooker.cookSushi("eel");
+        sushiSetCooker.pack();
+        sushiSetCooker.cookSushi("shrimp");
         sushiSetCooker.pack();*/
 
         //with facade
         CookFacade facade = new CookFacade(pizzaCooker, sushiSetCooker);
-        facade.cookPizza();
-        facade.boxPizza();
-        facade.cookSushi();
-        facade.boxSushi();
+        facade.cookAndBoxPizza("Margherita", "Bolognese");
+        facade.cookAndBoxSushi("eel", "shrimp");
     }
 }

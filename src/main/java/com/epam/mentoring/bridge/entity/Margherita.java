@@ -12,18 +12,16 @@ public class Margherita extends Pizza {
 		super();
 	}
 
-    public Margherita(PizzaPresenter pizzaPresenter) {
-        super(pizzaPresenter);
-    }
-
     public Margherita(String price, String[] ingredients, int rate, PizzaPresenter pizzaPresenter) {
         super(price, ingredients, rate, pizzaPresenter);
     }
 
+    @Override
     public String showName() {
 		return NAME;
 	}
 
+    @Override
 	public String showRate() {
 		
 		if (getRate() == 0) {

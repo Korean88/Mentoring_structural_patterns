@@ -11,12 +11,6 @@ public abstract class Pizza {
 	private int rate;
     private PizzaPresenter pizzaPresenter;
 
-    public static final String PIZZA_BEAN = "pizzaBean";
-    public static final String PRESENTER_BEAN = "presenterBean";
-    public static final String PIZZA_RATE = "pizzaRate";
-    public static final String PIZZA_INGREDIENTS = "pizzaIngredients";
-    public static final String PIZZA_PRICE = "pizzaPrice";
-
 	public Pizza() {
 		super();
 	}

@@ -3,13 +3,13 @@ package com.epam.mentoring.adapter;
 public class PizzaCookerImpl implements PizzaCooker {
 
 	@Override
-	public void bake() {
-		System.out.println("Baking a pizza...");
+	public void bake(String pizzaName) {
+		System.out.println("Baking "+ pizzaName +" pizza...");
 	}
 
 	@Override
 	public void cut() {
-		System.out.println("Cutting  a pizza into slices...");
+		System.out.println("Cutting a pizza into slices...");
 	}
 
 	@Override

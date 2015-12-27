@@ -18,8 +18,8 @@ public class ConveyorImpl implements Conveyor {
 	}
 
 	@Override
-	public void bakePizza() {
-		pizzaCooker.bake();
+	public void bakePizza(String pizzaName) {
+		pizzaCooker.bake(pizzaName);
 	}
 
 	@Override

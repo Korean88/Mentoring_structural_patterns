@@ -13,8 +13,8 @@ public class SushiSetCookerImpl implements SushiSetCooker {
 	}
 
 	@Override
-	public void cookSushi() {
-		System.out.println("Cooking sushi...");
+	public void cookSushi(String sushiName) {
+		System.out.println("Cooking "+ sushiName +" sushi...");
 	}
 
 	@Override
